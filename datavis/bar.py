@@ -6,24 +6,29 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 
+# styling for the dash app
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-df = pd.read_csv("data.csv")
 
 
-app = dash.Dash()
+mydf = pd.read_csv("data.csv")
+
+
+app = dash.Dash(external_stylesheets=external_stylesheets,
+                meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}])
 colors = {
     'background': '#111111',
     'text': '#7FDBFF'
 }
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
     html.H1(
-        children='Hello Dash',
+        children='Hello.. Welcome Data Analyst',
         style={
             'textAlign': 'center',
             'color': colors['text']
         }
     ),
-    html.Div(children='Dash: A web application framework for Python.', style={
+    html.Div(children='Gas leakage cases within Nairobi', style={
         'textAlign': 'center',
         'color': colors['text']
     }),
@@ -31,8 +36,8 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         id='Graph1',
         figure={
             'data': [
-                {'x': df['Name'], 'y': df['Old Grade'], 'type': 'bar', 'name': 'Nairobi'},
-                {'x': df['Name'], 'y': df['New Grade'], 'type': 'bar', 'name': 'Mombasa'},
+                {'x': mydf['Name'], 'y': mydf['Old Grade'], 'type': 'bar', 'name': 'Nairobi'},
+                {'x': mydf['Name'], 'y': mydf['New Grade'], 'type': 'bar', 'name': 'Nairobi'},
             ],
             'layout': {
                 'plot_bgcolor': colors['background'],
