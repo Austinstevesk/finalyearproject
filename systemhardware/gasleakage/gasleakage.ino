@@ -2,7 +2,7 @@
 #include <SoftwareSerial.h>
 #include <Servo.h>
 
-SoftwareSerial sim(9,10); //Rx, Tx
+SoftwareSerial sim(2, 3); //Rx, Tx
 LCD_I2C lcd(0x27); // Default address of most PCF8574 modules, change accordingly
 Servo motor;
 String number = "+254797277217";
@@ -17,7 +17,7 @@ void setup() {
   sim.begin(9600); //Synchronize gsm baudrate
   lcd.begin();
   lcd.backlight();
-  motor.attach(9);
+  motor.attach(5);
   motor.write(0);
   digitalWrite(Relay, HIGH);
   delay(3000);
