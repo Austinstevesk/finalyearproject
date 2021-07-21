@@ -19,6 +19,7 @@ from .models import Post
 from django.contrib.auth.models import User
 
 
+
 # Create your views here.
 
 
@@ -55,3 +56,7 @@ def about(request):
 
 def contact(request):
 	return render(request, 'monitor/contact.html')
+
+# def mygaslevels(request):
+# 	return render(request, 'monitor/mygaslevels.html')
+

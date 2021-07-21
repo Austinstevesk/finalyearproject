@@ -29,13 +29,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarToggle">
         <div class="navbar-nav mr-auto">
-          <a class="nav-item nav-link" href="{% url 'home' %}">About</a>
+          <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
         </div>
         <!-- Navbar Right Side -->
         <div class="navbar-nav">
           {% if user.is_authenticated %}
             <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-            <a class="nav-item nav-link" href="">My Gas Levels</a>
+            <a class="nav-item nav-link" href="{% url 'mygaslevels' %}">My Gas Levels</a>
 
             <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
 

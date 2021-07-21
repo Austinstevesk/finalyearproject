@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Customers',
+    'Consumers',
     'monitor',
     'users.apps.UsersConfig',
     'crispy_forms',
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gasmonitor',
-        'USER': 'root',
-        'PASSWORD': "",
-        'HOST': "127.0.0.1",
+        'NAME': 'austinst_gasmonitor',
+        'USER': 'austinst_root',
+        'PASSWORD': "0797277217Sk",
+        'HOST': "204.11.59.250",
         'PORT': "3306",
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"

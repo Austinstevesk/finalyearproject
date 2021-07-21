@@ -1,0 +1,39 @@
+{% extends 'monitor/main.html' %}
+
+{% block content %}
+{% if demos %}
+<h1 style="color: #0560f2;">Here are your gas Levels</h1>
+<h4 style="color: #f2ab05;"><b>Note:</b> 1 in the gas leakage column represents a gas leakage case and 0 represents a non leakage case</h4>
+<table class="table table-borderless">
+	<thead class="border-bottom font-weight-bold">
+	<tr style="color: #1c0245;">
+		<td>Username</td>
+		<td>Residence</td>
+		<td>Gas Level</td>
+		<td>Leakage case</td>
+		<td>Date</td>
+	</tr>
+</thead>
+<tbody>
+	{% for consumer in demos %}
+
+	<tr>
+		<td>{{consumer.username}}</td>
+		<td>{{consumer.residence}}</td>
+		<td>{{consumer.gasValue}}</td>
+		<td>{{consumer.leakagecase}}</td>
+		<td>{{consumer.date}}</td>
+	</tr>
+
+	{% endfor %}
+</tbody>
+
+</table>
+{% else %}
+<h1 style="color: #0560f2;">You don't have data yet, contact us via <b>austinstevesk@gmail.com</b> for the Hardware Installation</h1>
+
+{% endif %}
+
+
+
+{% endblock content %}
